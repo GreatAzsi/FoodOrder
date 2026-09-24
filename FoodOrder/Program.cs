@@ -24,8 +24,16 @@
             menu.AddMenuItem(pizza);
             menu.AddMenuItem(water);
             menu.AddMenuItem(salad);
-            view.ShowMenuItem(menu.FindByName("Pizza"));
-            //view.ShowMenuItem(menu.FindByName("Donut"));
+            if (menu.FindByName("Pizza") != null)
+            {
+                view.ShowMessage($"Found menu item: {menu.FindByName("Pizza").Name}");
+            }
+            else
+            {
+                view.ShowMessage("Menu item not found.");
+            }
+            
+            
             view.ShowMessage("-----------------------------------------------------------------------");
             view.ShowItems(menu.AvailableItems());
             view.ShowMessage("-----------------------------------------------------------------------");
